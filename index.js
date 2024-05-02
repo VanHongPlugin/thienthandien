@@ -4,6 +4,7 @@ const prefix = '!!';
 const adminId = '114425881957734818';
 const { MessageEmbed } = require('discord.js');
 const { channel } = require('diagnostics_channel');
+const port = process.env.PORT || 10000;
 client.on('ready', () => {
     client.user.setActivity('Sự kiện hunt thú I')
     client.user.setPresence({
@@ -13,6 +14,9 @@ client.on('ready', () => {
           type: 'LISTENING'
         }
       });
+    app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 });
 client.once('ready', () => {
     console.log('Bot đã sẵn sàng!');
